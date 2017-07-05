@@ -32,6 +32,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        predictText.text = nil
+        
         // get taken picture as UIImage
         let uiImg = info[UIImagePickerControllerEditedImage] as! UIImage
         
