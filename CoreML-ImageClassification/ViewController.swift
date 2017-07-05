@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let model = GoogLeNetPlaces()
+    let model = Inceptionv3()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func runNetwork() {
         if let pixelBuffer = ImageProcessor.pixelBuffer(forImage: (predictView.image?.cgImage)!) {
-            guard let prediction = try? model.prediction(sceneImage: pixelBuffer) else {
+            guard let prediction = try? model.prediction(image: pixelBuffer) else {
                 fatalError("Unexpected runtime error")
             }
             var output = ""
-            for keyValuePair in prediction.sceneLabelProbs.sorted(by: { $0.value > $1.value }) {
+            for keyValuePair in prediction.classLabelProbs.sorted(by: { $0.value > $1.value }) {
                 output += "(key: \"\(keyValuePair.key)\", value: \(String(format: "%.8f", arguments: [keyValuePair.value])))\n"
             }
             predictText.text = String(describing: output)
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let uiImg = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // display the image in UIImage View
-        predictView.image = resize(withImage: uiImg, scaledToSize: CGSize(width: 224, height: 224))
+        predictView.image = resize(withImage: uiImg, scaledToSize: CGSize(width: 299, height: 299))
         
         // hide infoTextLabel
         infoTextLabel.isHidden = true
@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setupViews() {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.title = "CoreML-ImageRecognition"
+        navigationItem.title = "CoreML-ImageClassification"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(handleReset))
         
         view.backgroundColor = .white

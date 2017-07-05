@@ -12,8 +12,8 @@
 		00DA5ACE1F0CFA3D00DF4949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DA5ACC1F0CFA3D00DF4949 /* Main.storyboard */; };
 		00DA5AD01F0CFA3D00DF4949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DA5ACF1F0CFA3D00DF4949 /* Assets.xcassets */; };
 		00DA5AD31F0CFA3D00DF4949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DA5AD11F0CFA3D00DF4949 /* LaunchScreen.storyboard */; };
-		00DA5ADB1F0CFB8400DF4949 /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00DA5ADA1F0CFB8300DF4949 /* GoogLeNetPlaces.mlmodel */; };
 		00DA5ADD1F0CFCD400DF4949 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA5ADC1F0CFCD400DF4949 /* ImageProcessor.swift */; };
+		00DA5AE11F0D20C900DF4949 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00DA5AE01F0D20C900DF4949 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		00DA5ACF1F0CFA3D00DF4949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00DA5AD21F0CFA3D00DF4949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00DA5AD41F0CFA3D00DF4949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00DA5ADA1F0CFB8300DF4949 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = GoogLeNetPlaces.mlmodel; path = ../../../Desktop/17/GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		00DA5ADC1F0CFCD400DF4949 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		00DA5AE01F0D20C900DF4949 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		00DA5AC71F0CFA3C00DF4949 /* CoreML-ImageClassification */ = {
 			isa = PBXGroup;
 			children = (
-				00DA5ADA1F0CFB8300DF4949 /* GoogLeNetPlaces.mlmodel */,
+				00DA5AE01F0D20C900DF4949 /* Inceptionv3.mlmodel */,
 				00DA5AC81F0CFA3D00DF4949 /* AppDelegate.swift */,
 				00DA5ACA1F0CFA3D00DF4949 /* ViewController.swift */,
 				00DA5ADC1F0CFCD400DF4949 /* ImageProcessor.swift */,
@@ -141,10 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DA5AE11F0D20C900DF4949 /* Inceptionv3.mlmodel in Sources */,
 				00DA5ACB1F0CFA3D00DF4949 /* ViewController.swift in Sources */,
 				00DA5AC91F0CFA3D00DF4949 /* AppDelegate.swift in Sources */,
 				00DA5ADD1F0CFCD400DF4949 /* ImageProcessor.swift in Sources */,
-				00DA5ADB1F0CFB8400DF4949 /* GoogLeNetPlaces.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
